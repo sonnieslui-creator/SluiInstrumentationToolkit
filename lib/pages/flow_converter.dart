@@ -134,7 +134,7 @@ class _FlowConverterPageState
               const SizedBox(height: 20),
 
               DropdownButtonFormField<String>(
-                value: toUnit,
+                initialValue: toUnit,
                 decoration: const InputDecoration(
                   labelText: 'To',
                   border: OutlineInputBorder(),

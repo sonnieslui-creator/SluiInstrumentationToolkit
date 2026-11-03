@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'pages/pressure_converter.dart';
 import 'pages/temperature_converter.dart';
 import 'pages/flow_converter.dart';
+import 'pages/density_converter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -104,16 +105,20 @@ Navigator.push(
             const SizedBox(height: 10),
 
             ElevatedButton(
-              onPressed: () {
-                showComingSoon(
-                  context,
-                  'Density Converter',
-                );
-              },
-              child: const Text(
-                'Density Converter',
-              ),
-            ),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) =>
+            const DensityConverterPage(),
+      ),
+    );
+  },
+  child: const Text(
+    'Density Converter',
+  ),
+),
+
 
             const SizedBox(height: 10),
 
