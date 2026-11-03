@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/pressure_converter.dart';
 import 'pages/temperature_converter.dart';
+import 'pages/flow_converter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,10 +88,13 @@ ElevatedButton(
 
             ElevatedButton(
               onPressed: () {
-                showComingSoon(
-                  context,
-                  'Flow Converter',
-                );
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (_) => 
+    const FlowConverterPage(),
+  ),
+);
               },
               child: const Text(
                 'Flow Converter',
