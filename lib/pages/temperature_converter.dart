@@ -19,11 +19,13 @@ class _TemperatureConverterPageState
 
   double result = 0.0;
 
-  final List<String> units = [
-    'Celsius',
-    'Fahrenheit',
-    'Kelvin',
-  ];
+final List<String> units = [
+  'Celsius',
+  'Fahrenheit',
+  'Kelvin',
+  'Rankine',
+  'Reaumur',
+];
 
   void convertTemperature() {
 
@@ -36,35 +38,51 @@ class _TemperatureConverterPageState
 
     switch (fromUnit) {
 
-      case 'Celsius':
-        celsius = input;
-        break;
+  case 'Celsius':
+    celsius = input;
+    break;
 
-      case 'Fahrenheit':
-        celsius = (input - 32) * 5 / 9;
-        break;
+  case 'Fahrenheit':
+    celsius = (input - 32) * 5 / 9;
+    break;
 
-      case 'Kelvin':
-        celsius = input - 273.15;
-        break;
-    }
+  case 'Kelvin':
+    celsius = input - 273.15;
+    break;
+
+  case 'Rankine':
+    celsius = (input - 491.67) * 5 / 9;
+    break;
+
+  case 'Reaumur':
+    celsius = input * 1.25;
+    break;
+}
 
     // Van Celsius naar doel
 
-    switch (toUnit) {
+ switch (toUnit) {
 
-      case 'Celsius':
-        result = celsius;
-        break;
+  case 'Celsius':
+    result = celsius;
+    break;
 
-      case 'Fahrenheit':
-        result = (celsius * 9 / 5) + 32;
-        break;
+  case 'Fahrenheit':
+    result = (celsius * 9 / 5) + 32;
+    break;
 
-      case 'Kelvin':
-        result = celsius + 273.15;
-        break;
-    }
+  case 'Kelvin':
+    result = celsius + 273.15;
+    break;
+
+  case 'Rankine':
+    result = (celsius + 273.15) * 9 / 5;
+    break;
+
+  case 'Reaumur':
+    result = celsius * 0.8;
+    break;
+}
 
     setState(() {});
   }
