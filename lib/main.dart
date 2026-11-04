@@ -4,6 +4,8 @@ import 'pages/temperature_converter.dart';
 import 'pages/flow_converter.dart';
 import 'pages/density_converter.dart';
 import 'pages/current_loop_calculator.dart';
+import 'pages/ohms_law_calculator.dart';
+
 
 
 void main() {
@@ -141,16 +143,19 @@ ElevatedButton(
             const SizedBox(height: 10),
 
             ElevatedButton(
-              onPressed: () {
-                showComingSoon(
-                  context,
-                  'Ohm\'s Law Calculator',
-                );
-              },
-              child: const Text(
-                'Ohm\'s Law Calculator',
-              ),
-            ),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) =>
+            const OhmsLawCalculatorPage(),
+      ),
+    );
+  },
+  child: const Text(
+    'Ohm\'s Law Calculator',
+  ),
+),
 
             const SizedBox(height: 10),
 
