@@ -3,6 +3,8 @@ import 'pages/pressure_converter.dart';
 import 'pages/temperature_converter.dart';
 import 'pages/flow_converter.dart';
 import 'pages/density_converter.dart';
+import 'pages/current_loop_calculator.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -121,18 +123,20 @@ Navigator.push(
 
 
             const SizedBox(height: 10),
-
-            ElevatedButton(
-              onPressed: () {
-                showComingSoon(
-                  context,
-                  '4-20mA Calculator',
-                );
-              },
-              child: const Text(
-                '4-20mA Calculator',
-              ),
-            ),
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) =>
+          const CurrentLoopCalculatorPage(),
+      ),
+    );
+  },
+  child: const Text(
+    '4-20mA Calculator',
+  ),
+),
 
             const SizedBox(height: 10),
 

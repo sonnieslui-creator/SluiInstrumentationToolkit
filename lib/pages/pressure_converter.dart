@@ -102,7 +102,7 @@ class _PressureConverterPageState
               const SizedBox(height: 20),
 
               DropdownButtonFormField<String>(
-                value: fromUnit,
+                initialValue: fromUnit,
                 decoration: const InputDecoration(
                   labelText: 'From',
                   border: OutlineInputBorder(),
@@ -123,7 +123,7 @@ class _PressureConverterPageState
               const SizedBox(height: 20),
 
               DropdownButtonFormField<String>(
-                value: toUnit,
+                initialValue: toUnit,
                 decoration: const InputDecoration(
                   labelText: 'To',
                   border: OutlineInputBorder(),
