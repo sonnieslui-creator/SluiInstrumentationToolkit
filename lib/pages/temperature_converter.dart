@@ -97,21 +97,21 @@ final List<String> units = [
         ),
       ),
 
-      body: Padding(
+      body: SafeArea(
+        child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
-
         child: Column(
           children: [
-
+            
             const Text(
               'Temperature Converter',
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
             TextField(
               controller: valueController,
@@ -128,7 +128,7 @@ final List<String> units = [
             const SizedBox(height: 20),
 
             DropdownButtonFormField<String>(
-              value: fromUnit,
+              initialValue: fromUnit,
               decoration: const InputDecoration(
                 labelText: 'From',
                 border: OutlineInputBorder(),
@@ -152,7 +152,7 @@ final List<String> units = [
             const SizedBox(height: 20),
 
             DropdownButtonFormField<String>(
-              value: toUnit,
+              initialValue: toUnit,
               decoration: const InputDecoration(
                 labelText: 'To',
                 border: OutlineInputBorder(),
@@ -194,6 +194,7 @@ final List<String> units = [
           ],
         ),
       ),
+      )
     );
   }
 }
