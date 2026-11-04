@@ -5,8 +5,7 @@ import 'pages/flow_converter.dart';
 import 'pages/density_converter.dart';
 import 'pages/current_loop_calculator.dart';
 import 'pages/ohms_law_calculator.dart';
-
-
+import 'pages/orifice_calculator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +37,7 @@ class HomePage extends StatelessWidget {
   ) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('$title is nog in ontwikkeling'),
+        content: Text('$title is nog in test5'),
       ),
     );
   }
@@ -160,17 +159,20 @@ ElevatedButton(
             const SizedBox(height: 10),
 
             ElevatedButton(
-              onPressed: () {
-                showComingSoon(
-                  context,
-                  'Orifice Calculator',
-                );
-              },
-              child: const Text(
-                'Orifice Calculator',
-              ),
-            ),
-          ],
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) =>
+           const OrificeCalculatorPage(),
+    ),
+  );
+},
+child: const Text(
+    'Orifice Calculator',
+    )
+  )
+],
         ),
       ),
     );
